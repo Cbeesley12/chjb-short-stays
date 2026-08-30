@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviced Accommodation Doncaster | CHJB Short Stays</title>
   <meta name="description" content="Serviced accommodation in Doncaster for contractors, NHS staff and families. Book direct with CHJB Short Stays for parking, Wi-Fi and weekly rates today.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://chjbshortstays.co.uk/">
   <link rel="preload" as="image" href="https://chjbshortstays.co.uk/hero-dining.jpg">
   <link rel="icon" type="image/jpeg" href="chjb-short-stays-logo.jpg">
@@ -159,36 +160,38 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #1f1c18;
-      --muted: #655f57;
-      --paper: #fffdf8;
-      --soft: #f5efe5;
-      --line: #e5dac8;
-      --gold: #b57b2a;
-      --gold-dark: #835519;
-      --green: #184f43;
-      --green-soft: #e7f0eb;
+      --charcoal: #1a1a1a;
+      --warm: #c8a45c;
+      --warm-deep: #aa8234;
+      --warm-light: #f5ead0;
+      --cream: #faf9f7;
+      --slate: #3d3d3d;
+      --muted: #7a7a7a;
+      --border: #e5e2dd;
       --white: #ffffff;
-      --shadow: 0 18px 50px rgba(31, 28, 24, 0.12);
+      --green: #174f3f;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
       margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: "Inter", Arial, sans-serif;
+      overflow-x: hidden;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: "DM Sans", Arial, sans-serif;
       line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
     }
 
     img {
@@ -201,149 +204,114 @@
       color: inherit;
     }
 
-    .wrap {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid rgba(229, 218, 200, 0.8);
-      background: rgba(255, 253, 248, 0.95);
-      backdrop-filter: blur(14px);
-    }
-
-    .header-inner {
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      min-height: 80px;
+      padding: 12px 32px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 82px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .brand img {
-      width: 54px;
-      height: 54px;
-      border-radius: 6px;
-      object-fit: contain;
-      background: var(--white);
-      border: 1px solid var(--line);
-    }
-
-    .brand span {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.93rem;
-      font-weight: 700;
-      color: var(--muted);
-    }
-
-    nav a {
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: var(--gold-dark);
-    }
-
-    .btn {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 12px 18px;
-      border-radius: 6px;
-      border: 1px solid var(--gold);
-      background: var(--gold);
-      color: var(--white);
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-logo {
+      position: absolute;
+      left: 32px;
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      font-weight: 800;
-      line-height: 1.2;
-      box-shadow: 0 12px 28px rgba(181, 123, 42, 0.22);
     }
 
-    .btn:hover {
-      background: var(--gold-dark);
-      border-color: var(--gold-dark);
-    }
-
-    .btn.secondary {
+    .nav-logo img {
+      width: 58px;
+      height: 58px;
+      border-radius: 8px;
+      object-fit: contain;
       background: var(--white);
-      color: var(--gold-dark);
-      box-shadow: none;
     }
 
-    .btn.secondary:hover {
-      background: var(--soft);
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--warm);
+    }
+
+    .nav-cta {
+      background: var(--warm);
+      color: var(--charcoal) !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(200, 164, 92, 0.35);
     }
 
     .hero {
+      padding: 128px 32px 72px;
       position: relative;
-      overflow: hidden;
-      min-height: 720px;
-      background: var(--ink);
-      color: var(--white);
+      background: var(--cream);
+      z-index: 10;
     }
 
-    .hero-photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.42;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(31, 28, 24, 0.92), rgba(31, 28, 24, 0.52), rgba(31, 28, 24, 0.18));
+    .hero-inner {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
+      gap: 48px;
+      align-items: center;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      align-content: center;
-      min-height: 720px;
-      max-width: 760px;
-      padding: 86px 0 120px;
+      max-width: 580px;
     }
 
-    .eyebrow {
-      margin: 0 0 16px;
-      color: #e8c98e;
-      font-size: 0.82rem;
+    .section-label,
+    .hero-badge {
+      color: var(--warm);
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 30px;
+      background: var(--warm-light);
+      letter-spacing: 2.5px;
+      margin-bottom: 24px;
     }
 
     h1,
     h2,
-    h3 {
+    h3,
+    p {
       margin: 0;
-      line-height: 1.08;
-      letter-spacing: 0;
     }
 
     h1,
@@ -352,759 +320,1037 @@
     }
 
     h1 {
-      max-width: 720px;
-      font-size: clamp(3.1rem, 7vw, 6.8rem);
-      color: var(--white);
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.14;
+      margin-bottom: 18px;
+      letter-spacing: 0;
+    }
+
+    h1 em {
+      color: var(--warm);
+      font-style: italic;
     }
 
     h2 {
-      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: 0;
     }
 
     h3 {
-      font-size: clamp(1.24rem, 2vw, 1.65rem);
+      color: var(--charcoal);
+      font-size: 18px;
+      line-height: 1.28;
+      letter-spacing: 0;
     }
 
-    p {
-      margin: 0;
+    .hero p,
+    .section-sub {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
     }
 
-    .lead {
-      margin-top: 24px;
-      max-width: 720px;
-      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
-      color: rgba(255, 255, 255, 0.88);
+    .hero p {
+      margin-bottom: 32px;
     }
 
-    .hero-actions,
+    .hero-buttons,
     .section-actions {
       display: flex;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
     }
 
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 36px;
-      max-width: 760px;
-    }
-
-    .hero-point {
-      border: 1px solid rgba(255, 255, 255, 0.22);
+    .btn-primary,
+    .btn-dark,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
       border-radius: 8px;
-      padding: 16px;
-      background: rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.92);
-      font-weight: 700;
+      padding: 15px 32px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
     }
 
-    section {
-      padding: 92px 0;
+    .btn-primary {
+      background: var(--warm);
+      color: var(--charcoal);
     }
 
-    .section-intro {
-      max-width: 780px;
-      margin-bottom: 36px;
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(200, 164, 92, 0.35);
     }
 
-    .section-intro p {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 1.08rem;
+    .btn-secondary {
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      color: var(--charcoal);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--warm);
+      background: rgba(200, 164, 92, 0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-dark {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      background: var(--slate);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .hero-images img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.08);
+      transition: transform 0.4s;
+    }
+
+    .hero-images img:hover {
+      transform: scale(1.03);
+    }
+
+    .hero-images img:first-child {
+      grid-column: 1 / -1;
+      height: 246px;
+    }
+
+    .hero-images img:nth-child(2),
+    .hero-images img:nth-child(3) {
+      height: 166px;
+    }
+
+    .section {
+      width: min(1200px, calc(100% - 64px));
+      margin: 0 auto;
+      padding: 96px 0;
+    }
+
+    .section.full {
+      width: 100%;
+      max-width: none;
+      padding: 96px 32px;
+    }
+
+    .section-inner {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-sub {
+      max-width: 650px;
+      margin-bottom: 52px;
     }
 
     .quick-links {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 26px;
+      margin: -30px 0 48px;
     }
 
     .quick-links a {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
       background: var(--white);
-      color: var(--muted);
+      color: var(--slate);
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .band {
-      background: var(--soft);
-    }
-
-    .audience-grid,
-    .included-grid,
-    .review-grid,
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .included-grid,
-    .faq-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
-      padding: 22px;
-      box-shadow: 0 10px 32px rgba(31, 28, 24, 0.06);
-    }
-
-    .card p {
-      margin-top: 10px;
-      color: var(--muted);
-    }
-
-    .property {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
-      gap: 38px;
-      align-items: center;
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .property + .property {
-      margin-top: 28px;
-    }
-
-    .property-media {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 10px;
-    }
-
-    .property-media img {
-      width: 100%;
-      height: 100%;
-      min-height: 220px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
-    .property-media img:first-child {
-      min-height: 430px;
-    }
-
-    .media-stack {
-      display: grid;
-      gap: 10px;
-    }
-
-    .property-copy {
-      min-width: 0;
-    }
-
-    .property-copy p {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .property-facts,
-    .location-list,
-    .included-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .property-facts li,
-    .location-list li,
-    .included-list li {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: var(--paper);
-      color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 13px;
       font-weight: 700;
     }
 
-    .location-list {
+    .quick-links a:hover {
+      color: var(--warm-deep);
+      border-color: var(--warm);
+    }
+
+    .usps-grid,
+    .reviews-grid,
+    .faq-grid,
+    .included-grid,
+    .location-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .location-list li {
-      border-radius: 8px;
-      background: var(--white);
-    }
-
-    .reviews-note {
-      color: var(--muted);
-    }
-
-    .review-card {
-      grid-column: span 2;
-    }
-
-    .review-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .score {
-      display: inline-flex;
-      align-items: center;
-      min-width: 42px;
-      justify-content: center;
-      border-radius: 6px;
-      padding: 6px 8px;
-      background: var(--green);
-      color: var(--white);
-      font-weight: 800;
-    }
-
-    .faq-grid article p {
-      margin-top: 12px;
-      color: var(--muted);
-    }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
       gap: 24px;
+    }
+
+    .usp-card,
+    .review-card,
+    .faq-card,
+    .included-card,
+    .location-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .usp-card:hover,
+    .review-card:hover,
+    .faq-card:hover,
+    .included-card:hover,
+    .location-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
+    }
+
+    .usp-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--warm-light);
+      color: var(--warm);
+      display: flex;
       align-items: center;
-      border-radius: 8px;
-      padding: 34px;
-      background: var(--green);
-      color: var(--white);
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
 
-    .contact-panel p {
-      margin-top: 12px;
-      color: rgba(255, 255, 255, 0.82);
+    .usp-card p,
+    .review-card p,
+    .faq-card p,
+    .included-card p,
+    .location-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 9px;
     }
 
-    footer {
-      padding: 48px 0;
-      background: var(--ink);
-      color: var(--white);
+    .properties-section {
+      background: var(--white);
     }
 
-    .footer-grid {
+    .properties-grid {
       display: grid;
-      grid-template-columns: 1.3fr repeat(3, minmax(0, 0.8fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
       gap: 28px;
     }
 
-    footer h2,
-    footer h3 {
-      font-family: "Inter", Arial, sans-serif;
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-
-    footer p,
-    footer li,
-    footer a {
-      color: rgba(255, 255, 255, 0.74);
-      font-size: 0.95rem;
-    }
-
-    footer ul {
-      display: grid;
-      gap: 8px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .footer-brand {
+    .prop-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
       display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
+      flex-direction: column;
+      min-width: 0;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .footer-brand img {
-      width: 58px;
-      height: 58px;
+    .prop-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+    }
+
+    .prop-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    .prop-img {
+      width: 100%;
+      height: 248px;
+      object-fit: cover;
+    }
+
+    .prop-price-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
       border-radius: 6px;
-      object-fit: contain;
+      padding: 7px 14px;
+      background: rgba(26, 26, 26, 0.86);
+      color: var(--warm);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .prop-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .prop-tagline {
+      color: var(--warm);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .prop-body h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 23px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .prop-body p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+      margin-bottom: 18px;
+    }
+
+    .prop-features,
+    .included-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 0 0 20px;
+      padding: 0;
+    }
+
+    .prop-features li,
+    .included-list li {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+
+    .prop-book {
+      display: block;
+      text-align: center;
+      margin-top: auto;
+      padding: 13px;
+      border-radius: 8px;
+      background: var(--charcoal);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+
+    .prop-book:hover {
+      background: var(--slate);
+    }
+
+    .audiences-section {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .audiences-inner {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .audiences-section h2 {
+      color: var(--white);
+    }
+
+    .audiences-section .section-sub {
+      color: rgba(255, 255, 255, 0.66);
+      margin-bottom: 28px;
+    }
+
+    .audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .audience-tag {
+      padding: 12px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .audiences-img {
+      width: 100%;
+      height: 405px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .reviews-section {
       background: var(--white);
     }
 
-    .fine-print {
-      margin-top: 30px;
+    .reviews-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 44px;
+    }
+
+    .reviews-head .section-sub {
+      margin-bottom: 0;
+    }
+
+    .reviews-scores {
+      min-width: 230px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .reviews-score {
+      padding: 18px 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .reviews-score strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .reviews-score span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .review-stars {
+      color: var(--warm);
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .review-card blockquote {
+      margin: 0 0 22px;
+      color: var(--charcoal);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .review-meta {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .review-meta strong,
+    .review-meta span {
+      display: block;
+    }
+
+    .review-meta strong {
+      color: var(--charcoal);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .review-meta span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .included-section {
+      background: var(--cream);
+    }
+
+    .location-card strong {
+      color: var(--charcoal);
+    }
+
+    .faq-card {
+      padding: 24px;
+    }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--warm) 0%, #b8943f 100%);
+      padding: 72px 32px;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      color: var(--charcoal);
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 14px;
+    }
+
+    .cta-band p {
+      max-width: 640px;
+      margin: 0 auto 30px;
+      color: rgba(26, 26, 26, 0.72);
+      font-size: 16px;
+    }
+
+    footer {
+      background: var(--charcoal);
+      color: rgba(255, 255, 255, 0.65);
+      padding: 64px 32px 32px;
+    }
+
+    .footer-inner {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 42px;
+    }
+
+    .footer-brand {
+      margin-bottom: 18px;
+    }
+
+    .footer-brand img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    footer p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    footer h3 {
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--warm);
+    }
+
+    .footer-copy {
+      width: min(1200px, 100%);
+      margin: 40px auto 0;
       padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      color: rgba(255, 255, 255, 0.58);
-      font-size: 0.88rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 13px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.35);
     }
 
-    @media (max-width: 960px) {
-      nav {
-        display: none;
+    @media (max-width: 900px) {
+      .nav {
+        min-height: 70px;
+        padding: 10px 16px;
+        justify-content: flex-end;
       }
 
-      .hero,
-      .hero-content {
-        min-height: 620px;
+      .nav-logo {
+        left: 16px;
       }
 
-      .hero-points,
-      .audience-grid,
-      .included-grid,
-      .faq-grid,
-      .location-list,
-      .footer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .property {
-        grid-template-columns: 1fr;
-        padding: 22px;
-      }
-
-      .property-media {
-        order: -1;
-      }
-
-      .contact-panel {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .wrap {
-        width: min(100% - 22px, 1180px);
-      }
-
-      .header-inner {
-        min-height: 72px;
-      }
-
-      .brand strong {
-        font-size: 0.96rem;
-      }
-
-      .brand span {
-        font-size: 0.72rem;
-      }
-
-      .brand img {
+      .nav-logo img {
         width: 46px;
         height: 46px;
       }
 
-      .hero,
-      .hero-content {
-        min-height: 650px;
+      .nav-links {
+        gap: 12px;
       }
 
-      .hero-content {
-        padding: 58px 0 78px;
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 10px 14px;
+        font-size: 13px !important;
+      }
+
+      .hero {
+        padding: 94px 16px 44px;
+      }
+
+      .hero-inner,
+      .audiences-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-images {
+        display: none;
+      }
+
+      .section {
+        width: min(100% - 32px, 1200px);
+        padding: 58px 0;
+      }
+
+      .section.full {
+        padding: 58px 16px;
+      }
+
+      .reviews-head,
+      .footer-inner {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .reviews-scores {
+        min-width: 0;
+      }
+
+      .audiences-img {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-badge,
+      .section-label {
+        font-size: 10px;
+        letter-spacing: 2px;
       }
 
       h1 {
-        font-size: 3rem;
+        font-size: 30px;
       }
 
-      section {
-        padding: 62px 0;
+      h2 {
+        font-size: 25px;
       }
 
-      .hero-points,
-      .audience-grid,
-      .included-grid,
-      .faq-grid,
-      .review-grid,
-      .location-list,
-      .footer-grid {
-        grid-template-columns: 1fr;
+      .hero p,
+      .section-sub {
+        font-size: 15px;
       }
 
-      .review-card {
-        grid-column: auto;
-      }
-
-      .property-media {
-        grid-template-columns: 1fr;
-      }
-
-      .property-media img:first-child,
-      .property-media img {
-        min-height: 260px;
-      }
-
-      .hero-actions,
+      .hero-buttons,
       .section-actions {
-        align-items: stretch;
         flex-direction: column;
       }
 
-      .btn {
+      .btn-primary,
+      .btn-secondary,
+      .btn-dark {
         width: 100%;
+        padding: 14px 22px;
+      }
+
+      .prop-img {
+        height: 210px;
+      }
+
+      .prop-body {
+        padding: 20px;
+      }
+
+      .quick-links {
+        margin-top: -28px;
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="https://chjbshortstays.co.uk/" aria-label="CHJB Short Stays home">
+  <header>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="https://chjbshortstays.co.uk/" class="nav-logo" aria-label="CHJB Short Stays home">
         <img src="chjb-short-stays-logo.jpg" alt="CHJB Short Stays Ltd logo" width="1024" height="1036">
-        <strong>CHJB Short Stays <span>Doncaster serviced accommodation</span></strong>
       </a>
-      <nav aria-label="Primary navigation">
+      <div class="nav-links">
         <a href="#properties">Properties</a>
-        <a href="#locations">Location</a>
-        <a href="#included">Included</a>
+        <a href="#why-us">Why Book Direct</a>
+        <a href="#locations">Locations</a>
+        <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
-        <a class="btn" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
-      </nav>
-    </div>
+        <a href="https://chjbshortstays.bookeddirectly.host/" class="nav-cta">Book Direct</a>
+      </div>
+    </nav>
   </header>
 
   <main>
     <section class="hero" id="top">
-      <img class="hero-photo" src="hero-dining.jpg" alt="Dining room in CHJB Short Stays serviced accommodation in Doncaster" width="2000" height="1335" fetchpriority="high">
-      <div class="wrap hero-content">
-        <p class="eyebrow">Direct-book stays for work, hospital visits and longer trips</p>
-        <h1>Serviced Accommodation in Doncaster</h1>
-        <p class="lead">CHJB Short Stays provides practical serviced accommodation in Doncaster for contractors, engineers, NHS staff, agency workers, families and relocation guests who need space, parking and a proper place to settle.</p>
-        <div class="hero-actions">
-          <a class="btn" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
-          <a class="btn secondary" href="#properties">View Doncaster properties</a>
-        </div>
-        <div class="hero-points" aria-label="Key benefits">
-          <div class="hero-point">Free parking for vans and cars</div>
-          <div class="hero-point">Weekly and monthly stays available</div>
-          <div class="hero-point">No platform fees when booking direct</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="why-book">
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="eyebrow">Built around real Doncaster stays</p>
-          <h2>Doncaster accommodation for teams, families and longer visits</h2>
-          <p>Whether you are working around Stainforth, travelling to Doncaster Royal Infirmary, visiting Doncaster Racecourse or need a flexible base near the M18 and A1(M), our homes give you more space than a hotel room and a simpler way to book direct.</p>
-          <div class="quick-links" aria-label="Section links">
-            <a href="#contractors">Contractor stays</a>
-            <a href="#hospital">Hospital visits</a>
-            <a href="#relocations">Relocations</a>
-            <a href="#locations">Doncaster travel links</a>
-            <a href="#reviews">Guest reviews</a>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-badge">Direct-book stays in South Yorkshire</p>
+          <h1>Serviced Accommodation in <em>Doncaster</em></h1>
+          <p>CHJB Short Stays provides practical serviced accommodation in Doncaster for contractors, engineers, NHS staff, agency workers, families and relocation guests who need space, parking and a proper place to settle.</p>
+          <div class="hero-buttons">
+            <a class="btn-primary" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+            <a class="btn-secondary" href="#properties">View Doncaster properties</a>
           </div>
         </div>
-        <div class="audience-grid">
-          <article class="card" id="contractors">
-            <h3>Contractors and project teams</h3>
-            <p>Homes with parking, Wi-Fi, kitchens, washing facilities and space to relax after shifts, well suited to engineers and trade teams working across Doncaster, Hatfield, Thorne, iPort and Gateway logistics parks.</p>
-          </article>
-          <article class="card" id="hospital">
-            <h3>NHS, agency staff and hospital visitors</h3>
-            <p>Flexible accommodation for locums, agency workers and families visiting Doncaster Royal Infirmary, with self check-in and direct communication before arrival.</p>
-          </article>
-          <article class="card" id="relocations">
-            <h3>Relocations and between-homes stays</h3>
-            <p>Short, weekly and monthly options for people moving to Doncaster, waiting for a property chain or needing temporary accommodation while work is carried out at home.</p>
-          </article>
-          <article class="card">
-            <h3>Families, groups and event visitors</h3>
-            <p>Comfortable houses for racecourse weekends, family visits, group bookings and event stays, with full-house privacy and the convenience of a kitchen and living space.</p>
-          </article>
+        <div class="hero-images" aria-label="Photos of CHJB Short Stays Doncaster accommodation">
+          <img src="hero-dining.jpg" alt="Dining room inside CHJB Short Stays serviced accommodation in Doncaster" width="2000" height="1335" fetchpriority="high">
+          <img src="hero-kitchen.jpg" alt="Kitchen in CHJB Short Stays Doncaster serviced accommodation" width="2000" height="1335">
+          <img src="hero-bathroom.jpg" alt="Bathroom in CHJB Short Stays accommodation in Doncaster" width="1335" height="2000">
         </div>
       </div>
     </section>
 
-    <section class="band" id="properties">
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="eyebrow">Choose your base</p>
-          <h2>Serviced accommodation properties in Doncaster</h2>
-          <p>Each property has its own setup and booking calendar. Use the direct booking link to check live availability, prices and property-specific details before you reserve.</p>
-        </div>
-
-        <article class="property" id="stainforth-large-house" aria-labelledby="stainforth-large-house-title">
-          <div class="property-copy">
-            <h3 id="stainforth-large-house-title">Stainforth, Doncaster - sleeps 10 with five bedrooms, pool table and large free parking area</h3>
-            <p>A spacious Doncaster-area house for contractors, larger families and project teams who need room to spread out. The large parking area is useful for work vehicles, while the pool table, kitchen and shared living spaces make longer stays easier after a day on site.</p>
-            <ul class="property-facts">
-              <li>5 bedrooms</li>
-              <li>Sleeps 10</li>
-              <li>Pool table</li>
-              <li>Large free parking area</li>
-            </ul>
-            <div class="section-actions">
-              <a class="btn" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
-              <a class="btn secondary" href="#locations">See Doncaster travel links</a>
-            </div>
-          </div>
-          <div class="property-media" aria-label="Photos of the Stainforth property">
-            <img src="stainforth-bedroom-1.jpg" alt="Double bedroom at the Stainforth, Doncaster serviced accommodation for teams" width="2000" height="1335" loading="lazy">
-            <div class="media-stack">
-              <img src="stainforth-bedroom-2.jpg" alt="Second bedroom in the Stainforth, Doncaster house for group stays" width="2000" height="1335" loading="lazy">
-              <img src="stainforth-bedroom-3.jpg" alt="Additional bedroom in Stainforth, Doncaster accommodation sleeping up to 10 guests" width="2000" height="1335" loading="lazy">
-            </div>
-          </div>
+    <section class="section" id="why-us">
+      <p class="section-label">Why book direct</p>
+      <h2>Doncaster accommodation for teams, families and longer visits</h2>
+      <p class="section-sub">Whether you are working around Stainforth, travelling to Doncaster Royal Infirmary, visiting Doncaster Racecourse or need a flexible base near the M18 and A1(M), our homes give you more space than a hotel room and a simpler way to book direct.</p>
+      <div class="quick-links" aria-label="Jump links">
+        <a href="#contractors">Contractors</a>
+        <a href="#hospital">Hospital stays</a>
+        <a href="#relocations">Relocations</a>
+        <a href="#locations">Travel links</a>
+        <a href="#included">What is included</a>
+      </div>
+      <div class="usps-grid">
+        <article class="usp-card" id="contractors">
+          <div class="usp-icon">£</div>
+          <h3>Book direct and avoid platform fees</h3>
+          <p>No Airbnb or Booking.com platform fees when you reserve through the CHJB Short Stays direct booking page.</p>
         </article>
-
-        <article class="property" id="doncaster-city-house" aria-labelledby="doncaster-city-house-title">
-          <div class="property-copy">
-            <h3 id="doncaster-city-house-title">Near Doncaster city centre - sleeps 6 with two bedrooms, free parking and easy hospital access</h3>
-            <p>This two-bedroom serviced accommodation is around five minutes from Doncaster city centre and well placed for Doncaster Royal Infirmary, Doncaster railway station, shopping, restaurants and family visits. It suits NHS staff, agency workers, small contractor teams and guests who want a practical base close to central Doncaster.</p>
-            <ul class="property-facts">
-              <li>2 bedrooms</li>
-              <li>Sleeps 6</li>
-              <li>Free parking</li>
-              <li>Near Doncaster Royal Infirmary</li>
-            </ul>
-            <div class="section-actions">
-              <a class="btn" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
-              <a class="btn secondary" href="#faq">Read booking FAQs</a>
-            </div>
-          </div>
-          <div class="property-media" aria-label="Photos of the Doncaster city centre property">
-            <img src="city-bedroom-1.jpg" alt="Bedroom in serviced accommodation near Doncaster city centre and Doncaster Royal Infirmary" width="1440" height="1908" loading="lazy">
-            <div class="media-stack">
-              <img src="city-bedroom-2.jpg" alt="Second bedroom in Doncaster city centre serviced accommodation sleeping up to 6 guests" width="1438" height="1917" loading="lazy">
-              <img src="city-bathroom.jpg" alt="Bathroom in CHJB Short Stays serviced accommodation near central Doncaster" width="1125" height="2000" loading="lazy">
-            </div>
-          </div>
+        <article class="usp-card">
+          <div class="usp-icon">P</div>
+          <h3>Free parking for cars and vans</h3>
+          <p>Useful for contractors, engineers and families travelling with vehicles, tools or longer-stay luggage.</p>
         </article>
-
-        <article class="property" id="m18-contractor-house" aria-labelledby="m18-contractor-house-title">
-          <div class="property-copy">
-            <h3 id="m18-contractor-house-title">Stainforth, Doncaster - sleeps 7 with four bedrooms, free parking and quick M18 access</h3>
-            <p>A four-bedroom Doncaster property set up for contractors and working guests who need straightforward access to the M18, Hatfield, Thorne and nearby industrial routes. The house has a fully equipped kitchen, living space and free parking, making it a practical option for weekly and monthly team stays.</p>
-            <ul class="property-facts">
-              <li>4 bedrooms</li>
-              <li>Sleeps 7</li>
-              <li>Close to M18</li>
-              <li>Free parking</li>
-            </ul>
-            <div class="section-actions">
-              <a class="btn" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
-              <a class="btn secondary" href="#included">See what is included</a>
-            </div>
-          </div>
-          <div class="property-media" aria-label="Photos of the M18 contractor property">
-            <img src="east-lane-exterior.jpg" alt="Exterior of Stainforth, Doncaster contractor accommodation close to the M18" width="4000" height="2252" loading="lazy">
-            <div class="media-stack">
-              <img src="east-lane-kitchen-dining.jpg" alt="Kitchen and dining area in Stainforth, Doncaster accommodation for contractor stays" width="4000" height="2252" loading="lazy">
-              <img src="east-lane-bedroom.jpg" alt="Bedroom in Stainforth, Doncaster serviced accommodation sleeping up to 7 guests" width="4000" height="2252" loading="lazy">
-            </div>
-          </div>
+        <article class="usp-card">
+          <div class="usp-icon">W</div>
+          <h3>Wi-Fi, kitchens and bills included</h3>
+          <p>Everyday essentials are built in, so teams can cook, work, relax and manage a stay without hotel limitations.</p>
+        </article>
+        <article class="usp-card">
+          <div class="usp-icon">30</div>
+          <h3>Flexible nightly, weekly and monthly rates</h3>
+          <p>Suitable for short trips, contractor projects, NHS placements, relocations and people between homes.</p>
         </article>
       </div>
     </section>
 
-    <section id="locations">
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="eyebrow">Road, rail, hospital and work routes</p>
-          <h2>Well placed for Doncaster, Stainforth, the M18 and A1(M)</h2>
-          <p>Our accommodation is positioned for guests who need practical access across Doncaster and South Yorkshire, including construction projects, healthcare placements, logistics work and family visits.</p>
+    <section class="section full properties-section" id="properties">
+      <div class="section-inner">
+        <p class="section-label">Choose your base</p>
+        <h2>Serviced accommodation properties in Doncaster</h2>
+        <p class="section-sub">Each property has its own setup and booking calendar. Use the direct booking link to check live availability, prices and property-specific details before you reserve.</p>
+        <div class="properties-grid">
+          <article class="prop-card" id="stainforth-large-house">
+            <div class="prop-img-wrap">
+              <img class="prop-img" src="stainforth-bedroom-1.jpg" alt="Double bedroom at the Stainforth, Doncaster serviced accommodation for teams" width="2000" height="1335" loading="lazy">
+              <div class="prop-price-tag">Sleeps 10</div>
+            </div>
+            <div class="prop-body">
+              <p class="prop-tagline">Stainforth, Doncaster - pool table</p>
+              <h3>Stainforth, Doncaster - sleeps 10 with five bedrooms, pool table and large free parking area</h3>
+              <p>A spacious Doncaster-area house for contractors, larger families and project teams who need room to spread out. The large parking area is useful for work vehicles, while the pool table, kitchen and shared living spaces make longer stays easier after a day on site.</p>
+              <ul class="prop-features">
+                <li>5 bedrooms</li>
+                <li>Sleeps 10</li>
+                <li>Pool table</li>
+                <li>Large free parking</li>
+              </ul>
+              <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+            </div>
+          </article>
+
+          <article class="prop-card" id="doncaster-city-house">
+            <div class="prop-img-wrap">
+              <img class="prop-img" src="city-bedroom-1.jpg" alt="Bedroom in serviced accommodation near Doncaster city centre and Doncaster Royal Infirmary" width="1440" height="1908" loading="lazy">
+              <div class="prop-price-tag">Sleeps 6</div>
+            </div>
+            <div class="prop-body">
+              <p class="prop-tagline">Near Doncaster city centre - hospital access</p>
+              <h3>Near Doncaster city centre - sleeps 6 with two bedrooms, free parking and easy hospital access</h3>
+              <p>This two-bedroom serviced accommodation is around five minutes from Doncaster city centre and well placed for Doncaster Royal Infirmary, Doncaster railway station, shopping, restaurants and family visits.</p>
+              <ul class="prop-features">
+                <li>2 bedrooms</li>
+                <li>Sleeps 6</li>
+                <li>Free parking</li>
+                <li>Near DRI</li>
+              </ul>
+              <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+            </div>
+          </article>
+
+          <article class="prop-card" id="m18-contractor-house">
+            <div class="prop-img-wrap">
+              <img class="prop-img" src="east-lane-exterior.jpg" alt="Exterior of Stainforth, Doncaster contractor accommodation close to the M18" width="4000" height="2252" loading="lazy">
+              <div class="prop-price-tag">Sleeps 7</div>
+            </div>
+            <div class="prop-body">
+              <p class="prop-tagline">Stainforth, Doncaster - close to M18</p>
+              <h3>Stainforth, Doncaster - sleeps 7 with four bedrooms, free parking and quick M18 access</h3>
+              <p>A four-bedroom Doncaster property set up for contractors and working guests who need straightforward access to the M18, Hatfield, Thorne and nearby industrial routes. The house has a kitchen, living space and free parking for weekly and monthly team stays.</p>
+              <ul class="prop-features">
+                <li>4 bedrooms</li>
+                <li>Sleeps 7</li>
+                <li>Close to M18</li>
+                <li>Free parking</li>
+              </ul>
+              <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+            </div>
+          </article>
         </div>
-        <ul class="location-list">
-          <li>M18 junctions 5 and 6 for regional work routes</li>
-          <li>A1(M) junctions 35-36 for north and south travel</li>
-          <li>Doncaster city centre for shops, food and services</li>
-          <li>Doncaster Royal Infirmary for NHS and family visits</li>
-          <li>Doncaster railway station for rail connections</li>
-          <li>Doncaster Racecourse for race days and events</li>
-          <li>iPort and Gateway logistics parks for project teams</li>
-          <li>Hatfield and Thorne for local contractor work</li>
-        </ul>
       </div>
     </section>
 
-    <section class="band" id="included">
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="eyebrow">Simple, practical stays</p>
-          <h2>What is included with CHJB Short Stays in Doncaster</h2>
-          <p>Our homes are designed for guests who need a clean, reliable base without hotel limitations or surprise platform costs.</p>
+    <section class="section full audiences-section" id="who">
+      <div class="audiences-inner">
+        <div>
+          <p class="section-label">Who we help</p>
+          <h2>Contractor, hospital and relocation stays across Doncaster</h2>
+          <p class="section-sub">The homes are set up for guests who need somewhere functional and comfortable, not just a room for the night. They suit contractors, engineers, NHS and agency staff, locums, families visiting Doncaster Royal Infirmary, relocations, people between homes, racecourse visitors and groups.</p>
+          <div class="audience-tags">
+            <span class="audience-tag">Contractors and trades</span>
+            <span class="audience-tag">NHS and agency staff</span>
+            <span class="audience-tag">Families and groups</span>
+            <span class="audience-tag">Relocations</span>
+            <span class="audience-tag">Racecourse visitors</span>
+            <span class="audience-tag">Long stays</span>
+          </div>
         </div>
+        <img class="audiences-img" src="doncaster.jpg" alt="Doncaster city scene near CHJB Short Stays serviced accommodation" width="1500" height="999" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section" id="locations">
+      <p class="section-label">Road, rail, hospital and work routes</p>
+      <h2>Well placed for Doncaster, Stainforth, the M18 and A1(M)</h2>
+      <p class="section-sub">Our accommodation is positioned for guests who need practical access across Doncaster and South Yorkshire, including construction projects, healthcare placements, logistics work and family visits.</p>
+      <div class="location-grid">
+        <article class="location-card">
+          <h3>M18 junctions 5 and 6</h3>
+          <p>Useful for regional routes and contractor travel around Doncaster, Stainforth, Hatfield and Thorne.</p>
+        </article>
+        <article class="location-card">
+          <h3>A1(M) junctions 35-36</h3>
+          <p>Convenient for teams travelling north and south for projects around South Yorkshire and beyond.</p>
+        </article>
+        <article class="location-card">
+          <h3>Doncaster city centre and railway station</h3>
+          <p>Practical access for restaurants, shopping, rail travel and guests who need a central Doncaster base.</p>
+        </article>
+        <article class="location-card">
+          <h3>Doncaster Royal Infirmary</h3>
+          <p>Suitable for NHS staff, agency workers, locums and families visiting hospital patients.</p>
+        </article>
+        <article class="location-card">
+          <h3>Doncaster Racecourse</h3>
+          <p>A good option for race days, events, family weekends and group stays.</p>
+        </article>
+        <article class="location-card">
+          <h3>iPort and Gateway logistics parks</h3>
+          <p>Useful for logistics, engineering, construction and project teams working away from home.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section full included-section" id="included">
+      <div class="section-inner">
+        <p class="section-label">What is included</p>
+        <h2>Practical serviced accommodation in Doncaster without hotel limitations</h2>
+        <p class="section-sub">The homes are designed for clean, reliable stays where guests can cook, park, work, sleep properly and manage everyday routines.</p>
         <div class="included-grid">
-          <article class="card">
-            <h3>Everyday essentials</h3>
+          <article class="included-card">
+            <h3>Included essentials</h3>
             <ul class="included-list">
               <li>Free parking</li>
               <li>Wi-Fi</li>
               <li>Fully equipped kitchen</li>
               <li>Linen and towels</li>
             </ul>
+            <p>Everything needed for a practical stay, whether you are booking for work, family or a temporary move.</p>
           </article>
-          <article class="card">
-            <h3>Flexible booking support</h3>
+          <article class="included-card">
+            <h3>Flexible stays</h3>
             <ul class="included-list">
               <li>All bills inclusive</li>
               <li>Self check-in</li>
               <li>Nightly, weekly and monthly rates</li>
               <li>No platform fees when booking direct</li>
             </ul>
+            <p>Simple booking for short visits, project teams and longer Doncaster stays when availability allows.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="reviews">
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="eyebrow">Guest feedback</p>
-          <h2>Recent reviews from Doncaster guests</h2>
-          <p class="reviews-note">Only real reviews supplied for CHJB Short Stays are shown here. Booking scores and comments remain visible on the original booking platforms.</p>
-        </div>
-        <div class="review-grid">
-          <article class="card review-card">
-            <div class="review-meta">
-              <div><strong>Emma</strong><br>Booking.com, August 2026</div>
-              <span class="score">10</span>
-            </div>
-            <h3>Exceptional</h3>
-            <p>Good size for all of us and comfortable. Had everything that we needed. Host was very accommodating to anything else we needed.</p>
-          </article>
-          <article class="card review-card">
-            <div class="review-meta">
-              <div><strong>Mark</strong><br>Booking.com, July 2026</div>
-              <span class="score">10</span>
-            </div>
-            <h3>Exceptional</h3>
-            <p>Amazing house, clean and lovely home, gave us the home from home experience whilst working away. Cooking facilities great. Ample space for parking.</p>
-          </article>
-          <article class="card review-card">
-            <div class="review-meta">
-              <div><strong>Vishal</strong><br>Booking.com, March 2026</div>
-              <span class="score">10</span>
-            </div>
-            <h3>Exceptional</h3>
-            <p>The place was great, easy to get to public transport and walking distance to most conveniences.</p>
-          </article>
-          <article class="card review-card">
-            <div class="review-meta">
-              <div><strong>Airbnb guest</strong><br>Airbnb</div>
-              <span class="score">4.87</span>
-            </div>
-            <h3>Highly rated stays</h3>
-            <p>Airbnb guest feedback currently shows an overall 4.87 rating from 15 reviews for the supplied property listing.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="faq">
-      <div class="wrap">
-        <div class="section-intro">
-          <p class="eyebrow">Booking questions</p>
-          <h2>Frequently asked questions about Doncaster serviced accommodation</h2>
-          <p>These answers cover the questions contractors, families, NHS staff and longer-stay guests usually ask before booking.</p>
-        </div>
-        <div class="faq-grid">
-          <article class="card">
-            <h3>How much does contractor accommodation in Doncaster cost?</h3>
-            <p>Rates depend on the property, dates, team size and length of stay. CHJB Short Stays offers flexible nightly, weekly and monthly pricing, and longer bookings usually give better value. Use the booking page to check live prices or contact us for a team quote.</p>
-          </article>
-          <article class="card">
-            <h3>Is there a minimum stay?</h3>
-            <p>Minimum stays can change by property and season. Short stays are available when the calendar allows, and weekly or monthly stays can be arranged for contractors, NHS staff, relocations and families.</p>
-          </article>
-          <article class="card">
-            <h3>Is serviced accommodation cheaper than a hotel in Doncaster?</h3>
-            <p>For teams or longer visits, serviced accommodation is often better value than booking several hotel rooms because you get shared living space, a fully equipped kitchen, Wi-Fi, parking and bills included in one place.</p>
-          </article>
-          <article class="card">
-            <h3>Do your Doncaster properties have parking?</h3>
-            <p>Yes. The properties are set up for guests who need practical parking, including contractors with vans and families travelling by car. Each listing explains the parking available before you book.</p>
-          </article>
-          <article class="card">
-            <h3>Can self-employed contractors claim accommodation as a business expense?</h3>
-            <p>Accommodation for work away from home may be tax-deductible for self-employed contractors, depending on your circumstances. Please check with your accountant or HMRC before claiming costs.</p>
-          </article>
-          <article class="card">
-            <h3>How do I book accommodation for a project team?</h3>
-            <p>Choose the property and dates on the booking page, or contact CHJB Short Stays with your team size, vehicles, preferred area and length of stay. We can point you to the most suitable Doncaster property.</p>
-          </article>
-          <article class="card">
-            <h3>Do you allow pets?</h3>
-            <p>Pet rules can vary by property and booking length. Please ask before booking so we can confirm whether a suitable option is available.</p>
-          </article>
-          <article class="card">
-            <h3>Can I book a long stay in Doncaster?</h3>
-            <p>Yes. Weekly and monthly stays are welcome when availability allows, including contractor projects, insurance stays, relocations and people between homes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="book">
-      <div class="wrap">
-        <div class="contact-panel">
+    <section class="section full reviews-section" id="reviews">
+      <div class="section-inner">
+        <div class="reviews-head">
           <div>
-            <p class="eyebrow">Book direct</p>
-            <h2>Check live availability for CHJB Short Stays</h2>
-            <p>Bookings and payments are handled securely through the CHJB Short Stays booking page. Booking direct avoids platform fees and gives you the latest availability for each Doncaster property.</p>
+            <p class="section-label">Guest reviews</p>
+            <h2>Recent reviews from Doncaster guests</h2>
+            <p class="section-sub">Only real reviews supplied for CHJB Short Stays are shown here. Booking scores and comments remain visible on the original booking platforms.</p>
           </div>
-          <a class="btn" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+          <div class="reviews-scores" aria-label="Review score summaries">
+            <div class="reviews-score">
+              <strong>4.87</strong>
+              <span>Airbnb rating from 15 reviews</span>
+            </div>
+            <div class="reviews-score">
+              <strong>10</strong>
+              <span>Booking.com guest scores supplied</span>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars">5 star review</div>
+            <blockquote>Good size for all of us and comfortable. Had everything that we needed. Host was very accommodating to anything else we needed.</blockquote>
+            <div class="review-meta">
+              <strong>Emma</strong>
+              <span>Booking.com guest - August 2026</span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars">5 star review</div>
+            <blockquote>Amazing house, clean and lovely home, gave us the home from home experience whilst working away. Cooking facilities great. Ample space for parking.</blockquote>
+            <div class="review-meta">
+              <strong>Mark</strong>
+              <span>Booking.com guest - July 2026</span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars">5 star review</div>
+            <blockquote>The place was great, easy to get to public transport and walking distance to most conveniences.</blockquote>
+            <div class="review-meta">
+              <strong>Vishal</strong>
+              <span>Booking.com guest - April 2026</span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars">5 star review</div>
+            <blockquote>Airbnb guest feedback currently shows an overall 4.87 rating from 15 reviews for the supplied property listing.</blockquote>
+            <div class="review-meta">
+              <strong>Airbnb guests</strong>
+              <span>Airbnb listing summary</span>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
+
+    <section class="section" id="faq">
+      <p class="section-label">Booking questions</p>
+      <h2>Frequently asked questions about Doncaster serviced accommodation</h2>
+      <p class="section-sub">These answers cover the questions contractors, families, NHS staff and longer-stay guests usually ask before booking.</p>
+      <div class="faq-grid">
+        <article class="faq-card">
+          <h3>How much does contractor accommodation in Doncaster cost?</h3>
+          <p>Rates depend on the property, dates, team size and length of stay. CHJB Short Stays offers flexible nightly, weekly and monthly pricing, and longer bookings usually give better value. Use the booking page to check live prices or contact us for a team quote.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Is there a minimum stay?</h3>
+          <p>Minimum stays can change by property and season. Short stays are available when the calendar allows, and weekly or monthly stays can be arranged for contractors, NHS staff, relocations and families.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Is serviced accommodation cheaper than a hotel in Doncaster?</h3>
+          <p>For teams or longer visits, serviced accommodation is often better value than booking several hotel rooms because you get shared living space, a fully equipped kitchen, Wi-Fi, parking and bills included in one place.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Do your Doncaster properties have parking?</h3>
+          <p>Yes. The properties are set up for guests who need practical parking, including contractors with vans and families travelling by car. Each listing explains the parking available before you book.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Can self-employed contractors claim accommodation as a business expense?</h3>
+          <p>Accommodation for work away from home may be tax-deductible for self-employed contractors, depending on your circumstances. Please check with your accountant or HMRC before claiming costs.</p>
+        </article>
+        <article class="faq-card">
+          <h3>How do I book accommodation for a project team?</h3>
+          <p>Choose the property and dates on the booking page, or contact CHJB Short Stays with your team size, vehicles, preferred area and length of stay. We can point you to the most suitable Doncaster property.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Do you allow pets?</h3>
+          <p>Pet rules can vary by property and booking length. Please ask before booking so we can confirm whether a suitable option is available.</p>
+        </article>
+        <article class="faq-card">
+          <h3>Can I book a long stay in Doncaster?</h3>
+          <p>Yes. Weekly and monthly stays are welcome when availability allows, including contractor projects, insurance stays, relocations and people between homes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band" id="book">
+      <h2>Check live availability for CHJB Short Stays</h2>
+      <p>Bookings and payments are handled securely through the CHJB Short Stays direct booking page. Booking direct avoids platform fees and gives you the latest availability for each Doncaster property.</p>
+      <a class="btn-dark" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
-            <img src="chjb-short-stays-logo.jpg" alt="CHJB Short Stays Ltd logo" width="1024" height="1036" loading="lazy">
-            <div>
-              <h2>CHJB Short Stays Ltd</h2>
-              <p>Serviced accommodation in Doncaster, South Yorkshire.</p>
-            </div>
-          </div>
-          <p>Company number 16649647. Registered office: [FILL IN].</p>
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="chjb-short-stays-logo.jpg" alt="CHJB Short Stays Ltd logo" width="1024" height="1036" loading="lazy">
         </div>
-        <div>
-          <h3>Contact</h3>
-          <ul>
-            <li><a href="tel:+447466464435">+44 7466 464435</a></li>
-            <li><a href="mailto:info@chjproperty.co.uk">info@chjproperty.co.uk</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Useful sections</h3>
-          <ul>
-            <li><a href="#properties">Doncaster properties</a></li>
-            <li><a href="#included">What is included</a></li>
-            <li><a href="#faq">Booking FAQs</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Book direct</h3>
-          <ul>
-            <li><a href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a></li>
-            <li><a href="https://chjbshortstays.co.uk/">chjbshortstays.co.uk</a></li>
-          </ul>
-        </div>
+        <p><strong>CHJB Short Stays Ltd</strong><br>Serviced accommodation in Doncaster, South Yorkshire.</p>
+        <p>Company number 16649647. Registered office: [FILL IN].</p>
       </div>
-      <p class="fine-print">CHJB Short Stays Ltd provides direct-book serviced accommodation for Doncaster contractors, NHS staff, families, relocations and longer stays.</p>
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+447466464435">+44 7466 464435</a>
+        <a href="mailto:info@chjproperty.co.uk">info@chjproperty.co.uk</a>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <a href="#properties">Doncaster properties</a>
+        <a href="#included">What is included</a>
+        <a href="#faq">Booking FAQs</a>
+      </div>
+      <div>
+        <h3>Book direct</h3>
+        <a href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+        <a href="https://chjbshortstays.co.uk/">chjbshortstays.co.uk</a>
+      </div>
     </div>
+    <p class="footer-copy">CHJB Short Stays Ltd provides direct-book serviced accommodation for Doncaster contractors, NHS staff, families, relocations and longer stays.</p>
   </footer>
 </body>
 </html>
