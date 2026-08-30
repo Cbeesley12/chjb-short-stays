@@ -41,7 +41,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "17"
+      "reviewCount": "19"
     },
     "amenityFeature": [
       {
@@ -218,6 +218,20 @@ const REVIEWS = [
     text: "Amazing clean home with a real home-from-home feel while working away. Great cooking facilities, ample parking, and would definitely book again.",
   },
   {
+    name: "Vishal",
+    source: "Booking.com guest - Wheatley House",
+    date: "Reviewed 21 April 2026",
+    rating: "5.0",
+    text: "The place was great, easy to reach by public transport, and within walking distance of most conveniences.",
+  },
+  {
+    name: "Antulis",
+    source: "Booking.com guest - Wheatley House",
+    date: "Reviewed 13 March 2026",
+    rating: "5.0",
+    text: "Rated exceptional by a Booking.com guest, with a perfect score for the stay.",
+  },
+  {
     name: "Amy",
     source: "Airbnb guest",
     date: "August 2026",
@@ -319,6 +333,7 @@ const REVIEWS = [
 
 const AIRBNB_REVIEWS_URL = "https://www.airbnb.co.uk/rooms/1602183689250918686/reviews?photo_id=2597205997&source_impression_id=p3_1782744939_P3oNcCjN0rK5LQgl&previous_page_section_name=1000";
 const BOOKING_REVIEWS_URL = "https://www.booking.com/hotel/gb/doncaster-contractor-stays-family-stays-close-to-m18-with-free-parking-en-gb.html";
+const WHEATLEY_BOOKING_REVIEWS_URL = "https://www.booking.com/hotel/gb/cosy-2-bedroom-house-sleeps-6-free-parking-en-gb.html";
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
@@ -1250,7 +1265,7 @@ window.ChjbApp = function ChjbSite() {
                 </div>
                 <div className="reviews-score">
                   <strong>10/10</strong>
-                  <span>Booking.com rating from 2 reviews</span>
+                  <span>Booking.com rating from 4 reviews</span>
                 </div>
               </div>
             </div>
@@ -1277,7 +1292,10 @@ window.ChjbApp = function ChjbSite() {
               Read Airbnb Reviews →
             </a>
             <a href={BOOKING_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="reviews-link">
-              Read Booking.com Reviews →
+              Read East Lane Booking.com Reviews →
+            </a>
+            <a href={WHEATLEY_BOOKING_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="reviews-link">
+              Read Wheatley Booking.com Reviews →
             </a>
           </div>
         </div>
