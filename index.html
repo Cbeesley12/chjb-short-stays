@@ -41,7 +41,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "10"
+      "reviewCount": "17"
     },
     "amenityFeature": [
       {
@@ -207,11 +207,53 @@ const AUDIENCES = [
 
 const REVIEWS = [
   {
+    name: "Emma",
+    source: "Booking.com guest - East Lane",
+    date: "Reviewed 12 August 2026",
+    rating: "5.0",
+    text: "Exceptional stay. The house was a good size for the group, comfortable, had everything needed, and the host was very accommodating.",
+  },
+  {
+    name: "Mark",
+    source: "Booking.com guest - East Lane",
+    date: "Reviewed 25 July 2026",
+    rating: "5.0",
+    text: "Amazing clean home with a real home-from-home feel while working away. Great cooking facilities, ample parking, and would definitely book again.",
+  },
+  {
+    name: "Amy",
+    source: "Airbnb guest",
+    date: "August 2026",
+    rating: "5.0",
+    text: "A lovely cottage for a family weekend. The pictures do not do it justice, and Craig and Kirsty were both extremely helpful and responsive.",
+  },
+  {
+    name: "Dean",
+    source: "Airbnb guest",
+    date: "August 2026",
+    rating: "5.0",
+    text: "Brilliant spot to relax and see friends. Great outdoor area, clean and well-presented indoors, with a brilliant activities room for pool and board games.",
+  },
+  {
+    name: "Abby",
+    source: "Airbnb guest",
+    date: "August 2026",
+    rating: "5.0",
+    text: "Craig was super responsive and helpful. The house was lovely, recently renovated, roomy, well equipped, secure, and great for children and dogs.",
+  },
+  {
     name: "Keith",
     source: "Airbnb guest",
     date: "June 2026",
     rating: "5.0",
     text: "Great host, fantastic property and Craig went out of his way to replace the BBQ gas canister. Excellent value for money, very clean, and everyone had an excellent weekend.",
+  },
+  {
+    name: "Patricia",
+    source: "Airbnb guest",
+    date: "July 2026",
+    rating: "4.0",
+    text: "The property served its purpose well for a celebration and offered the space needed for the stay.",
   },
   {
     name: "Liam",
@@ -279,6 +321,7 @@ const REVIEWS = [
 ];
 
 const AIRBNB_REVIEWS_URL = "https://www.airbnb.co.uk/rooms/1602183689250918686/reviews?photo_id=2597205997&source_impression_id=p3_1782744939_P3oNcCjN0rK5LQgl&previous_page_section_name=1000";
+const BOOKING_REVIEWS_URL = "https://www.booking.com/hotel/gb/doncaster-contractor-stays-family-stays-close-to-m18-with-free-parking-en-gb.html";
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
@@ -603,7 +646,7 @@ window.ChjbApp = function ChjbSite() {
 
           /* REVIEWS */
           .reviews-head { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
-          .reviews-score { min-width: 0; width: 100%; text-align: left; }
+          .reviews-scores { min-width: 0; width: 100%; }
           .review-card { min-height: 0; padding: 20px; }
 
           /* PROPERTIES */
@@ -749,8 +792,12 @@ window.ChjbApp = function ChjbSite() {
         .reviews-head .section-sub {
           margin-bottom: 0;
         }
-        .reviews-score {
+        .reviews-scores {
           min-width: 220px;
+          display: grid;
+          gap: 12px;
+        }
+        .reviews-score {
           padding: 20px 22px;
           border: 1px solid var(--border);
           border-radius: 14px;
@@ -820,6 +867,10 @@ window.ChjbApp = function ChjbSite() {
         }
         .reviews-cta {
           margin-top: 28px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 12px;
           text-align: center;
         }
         .reviews-link {
@@ -1191,13 +1242,19 @@ window.ChjbApp = function ChjbSite() {
                 <div className="section-label">Guest Reviews</div>
                 <div className="section-title">Guests love the space, location, and responsive hosting</div>
                 <div className="section-sub">
-                  Recent guest feedback from Airbnb highlights spacious homes,
-                  helpful hosting, easy transport links, and stays that work well for groups and families.
+                  Recent guest feedback from Airbnb and Booking.com highlights spacious homes,
+                  helpful hosting, easy transport links, and stays that work well for groups, families, and contractors.
                 </div>
               </div>
-              <div className="reviews-score" aria-label="Airbnb rating 4.9 out of 5 from 10 reviews">
-                <strong>4.9/5</strong>
-                <span>Airbnb rating from 10 reviews</span>
+              <div className="reviews-scores" aria-label="Guest review scores from Airbnb and Booking.com">
+                <div className="reviews-score">
+                  <strong>4.87/5</strong>
+                  <span>Airbnb rating from 15 reviews</span>
+                </div>
+                <div className="reviews-score">
+                  <strong>10/10</strong>
+                  <span>Booking.com rating from 2 reviews</span>
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -1220,7 +1277,10 @@ window.ChjbApp = function ChjbSite() {
           </div>
           <div className="reviews-cta">
             <a href={AIRBNB_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="reviews-link">
-              Read More Airbnb Reviews →
+              Read Airbnb Reviews →
+            </a>
+            <a href={BOOKING_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="reviews-link">
+              Read Booking.com Reviews →
             </a>
           </div>
         </div>
