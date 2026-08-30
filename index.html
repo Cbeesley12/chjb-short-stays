@@ -7,7 +7,7 @@
   <meta name="description" content="Serviced accommodation in Doncaster for contractors, NHS staff and families. Book direct with CHJB Short Stays for parking, Wi-Fi and weekly rates today.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://chjbshortstays.co.uk/">
-  <link rel="preload" as="image" href="https://chjbshortstays.co.uk/hero-dining.jpg">
+  <link rel="preload" as="image" href="https://chjbshortstays.co.uk/hero-dining-1200.webp" type="image/webp" media="(min-width: 900px)" imagesrcset="https://chjbshortstays.co.uk/hero-dining-400.webp 400w, https://chjbshortstays.co.uk/hero-dining-800.webp 800w, https://chjbshortstays.co.uk/hero-dining-1200.webp 1200w, https://chjbshortstays.co.uk/hero-dining-2000.webp 2000w" imagesizes="50vw">
   <link rel="icon" type="image/jpeg" href="chjb-short-stays-logo.jpg">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CHJB Short Stays">
@@ -34,6 +34,10 @@
         "email": "info@chjproperty.co.uk",
         "identifier": "Company number 16649647",
         "priceRange": "\u00a3\u00a3",
+        "sameAs": [
+          "https://www.airbnb.co.uk/rooms/1602183689250918686",
+          "https://www.booking.com/hotel/gb/doncaster-contractor-stays-family-stays-close-to-m18-with-free-parking.html"
+        ],
         "areaServed": [
           {
             "@type": "City",
@@ -44,19 +48,6 @@
             "name": "South Yorkshire"
           }
         ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "[FILL IN]",
-          "addressLocality": "Doncaster",
-          "addressRegion": "South Yorkshire",
-          "postalCode": "[FILL IN]",
-          "addressCountry": "GB"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "[FILL IN]",
-          "longitude": "[FILL IN]"
-        },
         "amenityFeature": [
           {
             "@type": "LocationFeatureSpecification",
@@ -83,6 +74,29 @@
             "name": "Self check-in",
             "value": true
           }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "Near Doncaster city centre serviced accommodation from \u00a382 per night",
+            "price": "82",
+            "priceCurrency": "GBP",
+            "url": "https://chjbshortstays.bookeddirectly.host/"
+          },
+          {
+            "@type": "Offer",
+            "name": "Stainforth Doncaster M18 contractor accommodation from \u00a3100 per night",
+            "price": "100",
+            "priceCurrency": "GBP",
+            "url": "https://chjbshortstays.bookeddirectly.host/"
+          },
+          {
+            "@type": "Offer",
+            "name": "Stainforth Doncaster large group accommodation from \u00a3182 per night",
+            "price": "182",
+            "priceCurrency": "GBP",
+            "url": "https://chjbshortstays.bookeddirectly.host/"
+          }
         ]
       },
       {
@@ -94,7 +108,7 @@
             "name": "How much does contractor accommodation in Doncaster cost?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Rates depend on the property, dates, team size and length of stay. CHJB Short Stays offers flexible nightly, weekly and monthly pricing, and longer bookings usually give better value. Use the booking page to check live prices or contact us for a team quote."
+              "text": "Current direct-book guide prices shown on Uplisting are from \u00a382, \u00a3100 and \u00a3182 per night, depending on the property and dates. Longer weekly or monthly contractor stays may price differently, so check live availability or ask for a team quote."
             }
           },
           {
@@ -238,6 +252,39 @@
       display: flex;
       gap: 28px;
       align-items: center;
+    }
+
+    .nav-toggle {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .burger {
+      display: none;
+    }
+
+    .burger {
+      position: absolute;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .burger span {
+      width: 22px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--white);
     }
 
     .nav-links a {
@@ -407,6 +454,28 @@
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
     }
 
+    .btn-secondary.whatsapp-btn {
+      border-color: var(--border);
+      background: var(--white);
+      color: var(--charcoal);
+    }
+
+    .btn-secondary.whatsapp-btn:hover {
+      border-color: #25d366;
+      background: rgba(37, 211, 102, 0.08);
+      color: #128c4a;
+    }
+
+    .whatsapp-icon {
+      color: #25d366;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .whatsapp-btn:hover .whatsapp-icon {
+      transform: scale(1.1);
+    }
+
     .btn-dark {
       background: var(--charcoal);
       color: var(--white);
@@ -424,6 +493,10 @@
       gap: 12px;
     }
 
+    .hero-images picture {
+      display: block;
+    }
+
     .hero-images img {
       width: 100%;
       border-radius: 14px;
@@ -436,13 +509,16 @@
       transform: scale(1.03);
     }
 
-    .hero-images img:first-child {
+    .hero-images picture:first-child {
       grid-column: 1 / -1;
+    }
+
+    .hero-images picture:first-child img {
       height: 246px;
     }
 
-    .hero-images img:nth-child(2),
-    .hero-images img:nth-child(3) {
+    .hero-images picture:nth-child(2) img,
+    .hero-images picture:nth-child(3) img {
       height: 166px;
     }
 
@@ -492,6 +568,7 @@
     }
 
     .usps-grid,
+    .audience-detail-grid,
     .reviews-grid,
     .faq-grid,
     .included-grid,
@@ -502,6 +579,7 @@
     }
 
     .usp-card,
+    .audience-detail-card,
     .review-card,
     .faq-card,
     .included-card,
@@ -514,6 +592,7 @@
     }
 
     .usp-card:hover,
+    .audience-detail-card:hover,
     .review-card:hover,
     .faq-card:hover,
     .included-card:hover,
@@ -537,6 +616,7 @@
     }
 
     .usp-card p,
+    .audience-detail-card p,
     .review-card p,
     .faq-card p,
     .included-card p,
@@ -545,6 +625,10 @@
       font-size: 14px;
       line-height: 1.6;
       margin-top: 9px;
+    }
+
+    .audience-detail-grid {
+      margin-top: 24px;
     }
 
     .properties-section {
@@ -596,6 +680,13 @@
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 0.3px;
+    }
+
+    .prop-rate {
+      margin: 0 0 14px;
+      color: var(--charcoal);
+      font-size: 15px;
+      font-weight: 800;
     }
 
     .prop-body {
@@ -893,7 +984,7 @@
       .nav {
         min-height: 70px;
         padding: 10px 16px;
-        justify-content: flex-end;
+        justify-content: center;
       }
 
       .nav-logo {
@@ -905,16 +996,37 @@
         height: 46px;
       }
 
-      .nav-links {
-        gap: 12px;
+      .burger {
+        display: flex;
       }
 
-      .nav-links a:not(.nav-cta) {
+      .nav-links {
         display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 20px 16px 24px;
+        background: rgba(26, 26, 26, 0.98);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.22);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+
+      .nav-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 16px;
+        text-align: center;
       }
 
       .nav-cta {
-        padding: 10px 14px;
+        padding: 12px 16px !important;
         font-size: 13px !important;
       }
 
@@ -929,7 +1041,17 @@
       }
 
       .hero-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .hero-images picture:not(:first-child) {
         display: none;
+      }
+
+      .hero-images picture:first-child img {
+        height: 220px;
       }
 
       .section {
@@ -1008,11 +1130,18 @@
       <a href="https://chjbshortstays.co.uk/" class="nav-logo" aria-label="CHJB Short Stays home">
         <img src="chjb-short-stays-logo.jpg" alt="CHJB Short Stays Ltd logo" width="1024" height="1036">
       </a>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation menu">
+      <label class="burger" for="nav-toggle" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
       <div class="nav-links">
         <a href="#properties">Properties</a>
-        <a href="#why-us">Why Book Direct</a>
+        <a href="contractor-accommodation-doncaster/">Contractors</a>
+        <a href="accommodation-near-doncaster-royal-infirmary/">Hospital</a>
+        <a href="doncaster-racecourse-accommodation/">Racecourse</a>
         <a href="#locations">Locations</a>
-        <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
         <a href="https://chjbshortstays.bookeddirectly.host/" class="nav-cta">Book Direct</a>
       </div>
@@ -1028,13 +1157,26 @@
           <p>CHJB Short Stays provides practical serviced accommodation in Doncaster for contractors, engineers, NHS staff, agency workers, families and relocation guests who need space, parking and a proper place to settle.</p>
           <div class="hero-buttons">
             <a class="btn-primary" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+            <a class="btn-secondary whatsapp-btn" href="https://wa.me/447466464435?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20availability." target="_blank" rel="noopener noreferrer">
+              <svg class="whatsapp-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+              WhatsApp Us
+            </a>
             <a class="btn-secondary" href="#properties">View Doncaster properties</a>
           </div>
         </div>
         <div class="hero-images" aria-label="Photos of CHJB Short Stays Doncaster accommodation">
-          <img src="hero-dining.jpg" alt="Dining room inside CHJB Short Stays serviced accommodation in Doncaster" width="2000" height="1335" fetchpriority="high">
-          <img src="hero-kitchen.jpg" alt="Kitchen in CHJB Short Stays Doncaster serviced accommodation" width="2000" height="1335">
-          <img src="hero-bathroom.jpg" alt="Bathroom in CHJB Short Stays accommodation in Doncaster" width="1335" height="2000">
+          <picture>
+            <source type="image/webp" srcset="hero-dining-400.webp 400w, hero-dining-800.webp 800w, hero-dining-1200.webp 1200w, hero-dining-2000.webp 2000w" sizes="(min-width: 900px) 50vw, 100vw">
+            <img src="hero-dining.jpg" alt="Dining room inside CHJB Short Stays serviced accommodation in Doncaster" width="2000" height="1335" fetchpriority="high">
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="hero-kitchen-400.webp 400w, hero-kitchen-800.webp 800w, hero-kitchen-1200.webp 1200w, hero-kitchen-2000.webp 2000w" sizes="25vw">
+            <img src="hero-kitchen.jpg" alt="Kitchen in CHJB Short Stays Doncaster serviced accommodation" width="2000" height="1335">
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="hero-bathroom-400.webp 400w, hero-bathroom-800.webp 800w, hero-bathroom-1200.webp 1200w, hero-bathroom-2000.webp 2000w" sizes="25vw">
+            <img src="hero-bathroom.jpg" alt="Bathroom in CHJB Short Stays accommodation in Doncaster" width="1335" height="2000">
+          </picture>
         </div>
       </div>
     </section>
@@ -1044,14 +1186,15 @@
       <h2>Doncaster accommodation for teams, families and longer visits</h2>
       <p class="section-sub">Whether you are working around Stainforth, travelling to Doncaster Royal Infirmary, visiting Doncaster Racecourse or need a flexible base near the M18 and A1(M), our homes give you more space than a hotel room and a simpler way to book direct.</p>
       <div class="quick-links" aria-label="Jump links">
-        <a href="#contractors">Contractors</a>
-        <a href="#hospital">Hospital stays</a>
-        <a href="#relocations">Relocations</a>
+        <a href="contractor-accommodation-doncaster/">Contractor accommodation guide</a>
+        <a href="accommodation-near-doncaster-royal-infirmary/">Hospital accommodation guide</a>
+        <a href="doncaster-racecourse-accommodation/">Racecourse accommodation guide</a>
+        <a href="#relocation-accommodation">Relocations</a>
         <a href="#locations">Travel links</a>
         <a href="#included">What is included</a>
       </div>
       <div class="usps-grid">
-        <article class="usp-card" id="contractors">
+        <article class="usp-card">
           <div class="usp-icon">£</div>
           <h3>Book direct and avoid platform fees</h3>
           <p>No Airbnb or Booking.com platform fees when you reserve through the CHJB Short Stays direct booking page.</p>
@@ -1072,6 +1215,20 @@
           <p>Suitable for short trips, contractor projects, NHS placements, relocations and people between homes.</p>
         </article>
       </div>
+      <div class="audience-detail-grid">
+        <article class="audience-detail-card" id="contractor-accommodation">
+          <h3>Contractor accommodation in Doncaster</h3>
+          <p>For contractors, engineers and project teams, the priority is usually parking, beds, Wi-Fi, cooking facilities and easy access to work. CHJB Short Stays covers Doncaster, Stainforth, M18 junctions 5 and 6, A1(M) junctions 35-36, iPort, Gateway, Hatfield and Thorne.</p>
+        </article>
+        <article class="audience-detail-card" id="hospital-accommodation">
+          <h3>Accommodation near Doncaster Royal Infirmary</h3>
+          <p>For NHS staff, agency workers, locums and families visiting hospital patients, the Doncaster city property gives a practical base near Doncaster Royal Infirmary, the railway station and local services.</p>
+        </article>
+        <article class="audience-detail-card" id="relocation-accommodation">
+          <h3>Relocation and between-homes accommodation</h3>
+          <p>Weekly and monthly stays can work well for relocations, insurance stays, delayed house moves and people needing temporary accommodation in Doncaster while repairs or property chains are sorted.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section full properties-section" id="properties">
@@ -1082,12 +1239,16 @@
         <div class="properties-grid">
           <article class="prop-card" id="stainforth-large-house">
             <div class="prop-img-wrap">
-              <img class="prop-img" src="stainforth-bedroom-1.jpg" alt="Double bedroom at the Stainforth, Doncaster serviced accommodation for teams" width="2000" height="1335" loading="lazy">
-              <div class="prop-price-tag">Sleeps 10</div>
+              <picture>
+                <source type="image/webp" srcset="stainforth-bedroom-1-400.webp 400w, stainforth-bedroom-1-800.webp 800w, stainforth-bedroom-1-1200.webp 1200w, stainforth-bedroom-1-2000.webp 2000w" sizes="(min-width: 900px) 33vw, 100vw">
+                <img class="prop-img" src="stainforth-bedroom-1.jpg" alt="Double bedroom at the Stainforth, Doncaster serviced accommodation for teams" width="2000" height="1335" loading="lazy">
+              </picture>
+              <div class="prop-price-tag">From &pound;182/night</div>
             </div>
             <div class="prop-body">
               <p class="prop-tagline">Stainforth, Doncaster - pool table</p>
               <h3>Stainforth, Doncaster - sleeps 10 with five bedrooms, pool table and large free parking area</h3>
+              <p class="prop-rate">From &pound;182 per night</p>
               <p>A spacious Doncaster-area house for contractors, larger families and project teams who need room to spread out. The large parking area is useful for work vehicles, while the pool table, kitchen and shared living spaces make longer stays easier after a day on site.</p>
               <ul class="prop-features">
                 <li>5 bedrooms</li>
@@ -1101,12 +1262,16 @@
 
           <article class="prop-card" id="doncaster-city-house">
             <div class="prop-img-wrap">
-              <img class="prop-img" src="city-bedroom-1.jpg" alt="Bedroom in serviced accommodation near Doncaster city centre and Doncaster Royal Infirmary" width="1440" height="1908" loading="lazy">
-              <div class="prop-price-tag">Sleeps 6</div>
+              <picture>
+                <source type="image/webp" srcset="city-bedroom-1-400.webp 400w, city-bedroom-1-800.webp 800w, city-bedroom-1-1200.webp 1200w, city-bedroom-1-2000.webp 2000w" sizes="(min-width: 900px) 33vw, 100vw">
+                <img class="prop-img" src="city-bedroom-1.jpg" alt="Bedroom in serviced accommodation near Doncaster city centre and Doncaster Royal Infirmary" width="1440" height="1908" loading="lazy">
+              </picture>
+              <div class="prop-price-tag">From &pound;82/night</div>
             </div>
             <div class="prop-body">
               <p class="prop-tagline">Near Doncaster city centre - hospital access</p>
               <h3>Near Doncaster city centre - sleeps 6 with two bedrooms, free parking and easy hospital access</h3>
+              <p class="prop-rate">From &pound;82 per night</p>
               <p>This two-bedroom serviced accommodation is around five minutes from Doncaster city centre and well placed for Doncaster Royal Infirmary, Doncaster railway station, shopping, restaurants and family visits.</p>
               <ul class="prop-features">
                 <li>2 bedrooms</li>
@@ -1120,12 +1285,16 @@
 
           <article class="prop-card" id="m18-contractor-house">
             <div class="prop-img-wrap">
-              <img class="prop-img" src="east-lane-exterior.jpg" alt="Exterior of Stainforth, Doncaster contractor accommodation close to the M18" width="4000" height="2252" loading="lazy">
-              <div class="prop-price-tag">Sleeps 7</div>
+              <picture>
+                <source type="image/webp" srcset="east-lane-exterior-400.webp 400w, east-lane-exterior-800.webp 800w, east-lane-exterior-1200.webp 1200w, east-lane-exterior-2000.webp 2000w" sizes="(min-width: 900px) 33vw, 100vw">
+                <img class="prop-img" src="east-lane-exterior.jpg" alt="Exterior of Stainforth, Doncaster contractor accommodation close to the M18" width="4000" height="2252" loading="lazy">
+              </picture>
+              <div class="prop-price-tag">From &pound;100/night</div>
             </div>
             <div class="prop-body">
               <p class="prop-tagline">Stainforth, Doncaster - close to M18</p>
               <h3>Stainforth, Doncaster - sleeps 7 with four bedrooms, free parking and quick M18 access</h3>
+              <p class="prop-rate">From &pound;100 per night</p>
               <p>A four-bedroom Doncaster property set up for contractors and working guests who need straightforward access to the M18, Hatfield, Thorne and nearby industrial routes. The house has a kitchen, living space and free parking for weekly and monthly team stays.</p>
               <ul class="prop-features">
                 <li>4 bedrooms</li>
@@ -1155,7 +1324,10 @@
             <span class="audience-tag">Long stays</span>
           </div>
         </div>
-        <img class="audiences-img" src="doncaster.jpg" alt="Doncaster city scene near CHJB Short Stays serviced accommodation" width="1500" height="999" loading="lazy">
+        <picture>
+          <source type="image/webp" srcset="doncaster-400.webp 400w, doncaster-800.webp 800w, doncaster-1200.webp 1200w, doncaster-2000.webp 2000w" sizes="(min-width: 900px) 50vw, 100vw">
+          <img class="audiences-img" src="doncaster.jpg" alt="Doncaster city scene near CHJB Short Stays serviced accommodation" width="1500" height="999" loading="lazy">
+        </picture>
       </div>
     </section>
 
@@ -1227,16 +1399,20 @@
           <div>
             <p class="section-label">Guest reviews</p>
             <h2>Recent reviews from Doncaster guests</h2>
-            <p class="section-sub">Only real reviews supplied for CHJB Short Stays are shown here. Booking scores and comments remain visible on the original booking platforms.</p>
+            <p class="section-sub">Only real review comments supplied for CHJB Short Stays are shown here. Platform scores are shown separately so they do not read like testimonials.</p>
           </div>
           <div class="reviews-scores" aria-label="Review score summaries">
             <div class="reviews-score">
               <strong>4.87</strong>
-              <span>Airbnb rating from 15 reviews</span>
+              <span>Average Airbnb rating</span>
             </div>
             <div class="reviews-score">
-              <strong>10</strong>
-              <span>Booking.com guest scores supplied</span>
+              <strong>15</strong>
+              <span>Reviews on the supplied Airbnb listing</span>
+            </div>
+            <div class="reviews-score">
+              <strong>10/10</strong>
+              <span>Booking.com score shown on supplied guest reviews</span>
             </div>
           </div>
         </div>
@@ -1265,14 +1441,6 @@
               <span>Booking.com guest - April 2026</span>
             </div>
           </article>
-          <article class="review-card">
-            <div class="review-stars">5 star review</div>
-            <blockquote>Airbnb guest feedback currently shows an overall 4.87 rating from 15 reviews for the supplied property listing.</blockquote>
-            <div class="review-meta">
-              <strong>Airbnb guests</strong>
-              <span>Airbnb listing summary</span>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -1284,7 +1452,7 @@
       <div class="faq-grid">
         <article class="faq-card">
           <h3>How much does contractor accommodation in Doncaster cost?</h3>
-          <p>Rates depend on the property, dates, team size and length of stay. CHJB Short Stays offers flexible nightly, weekly and monthly pricing, and longer bookings usually give better value. Use the booking page to check live prices or contact us for a team quote.</p>
+          <p>Current direct-book guide prices shown on Uplisting are from &pound;82, &pound;100 and &pound;182 per night, depending on the property and dates. Longer weekly or monthly contractor stays may price differently, so check live availability or ask for a team quote.</p>
         </article>
         <article class="faq-card">
           <h3>Is there a minimum stay?</h3>
@@ -1331,16 +1499,20 @@
           <img src="chjb-short-stays-logo.jpg" alt="CHJB Short Stays Ltd logo" width="1024" height="1036" loading="lazy">
         </div>
         <p><strong>CHJB Short Stays Ltd</strong><br>Serviced accommodation in Doncaster, South Yorkshire.</p>
-        <p>Company number 16649647. Registered office: [FILL IN].</p>
+        <p>Company number 16649647. Registered office: 27 Old Gloucester Street, London. This is the company registered office, not a Doncaster guest accommodation address.</p>
       </div>
       <div>
         <h3>Contact</h3>
         <a href="tel:+447466464435">+44 7466 464435</a>
+        <a href="https://wa.me/447466464435?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20availability." target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a href="mailto:info@chjproperty.co.uk">info@chjproperty.co.uk</a>
       </div>
       <div>
         <h3>Site</h3>
         <a href="#properties">Doncaster properties</a>
+        <a href="contractor-accommodation-doncaster/">Contractor accommodation</a>
+        <a href="accommodation-near-doncaster-royal-infirmary/">Near Doncaster Royal Infirmary</a>
+        <a href="doncaster-racecourse-accommodation/">Near Doncaster Racecourse</a>
         <a href="#included">What is included</a>
         <a href="#faq">Booking FAQs</a>
       </div>
