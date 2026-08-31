@@ -12,16 +12,17 @@
     {
       match: "city-bedroom-1",
       slides: [
-        { base: "city-bedroom-2", alt: "Second bedroom in Wheatley, Doncaster sleeps 6 house", width: 1438, height: 1917 },
-        { base: "city-bathroom", alt: "Bathroom in Wheatley accommodation near Doncaster Royal Infirmary", width: 1125, height: 2000 }
+        { base: "city-bedroom-2", alt: "Second bedroom in Wheatley, Doncaster sleeps 6 house", width: 1438, height: 1917 }
       ]
     },
     {
-      match: "east-lane-exterior",
+      match: "east-lane-kitchen",
       slides: [
-        { base: "east-lane-kitchen-dining", alt: "Front exterior and parking at the Stainforth M18 contractor house", width: 4000, height: 2252 },
-        { base: "east-lane-dining-close", alt: "Close exterior view of the Stainforth M18 contractor house", width: 4000, height: 2252 },
-        { base: "east-lane-lounge", alt: "Front view of the Stainforth contractor house near the M18", width: 4000, height: 2252 }
+        { base: "east-lane-dining", alt: "Dining area and kitchen at the Stainforth, Doncaster M18 house", width: 2000, height: 1126 },
+        { base: "east-lane-bedroom-orange", alt: "Bedroom with orange bedding at the Stainforth, Doncaster M18 house", width: 2000, height: 1126 },
+        { base: "east-lane-living-room", alt: "Living room at the Stainforth, Doncaster M18 contractor house", width: 2000, height: 1126 },
+        { base: "east-lane-bathroom", alt: "Bathroom at the Stainforth, Doncaster M18 house", width: 2000, height: 1126 },
+        { base: "east-lane-exterior-wide", alt: "Exterior and parking at the Stainforth, Doncaster M18 house", width: 2000, height: 1126 }
       ]
     }
   ];
