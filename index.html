@@ -663,6 +663,25 @@
       background: var(--charcoal);
     }
 
+    .media-scroller {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .media-scroller::-webkit-scrollbar,
+    .photo-grid-scroller .photo-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .media-slide {
+      flex: 0 0 100%;
+      min-width: 100%;
+      scroll-snap-align: start;
+    }
+
     .prop-img {
       width: 100%;
       height: 248px;
@@ -680,6 +699,46 @@
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 0.3px;
+    }
+
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      z-index: 4;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 50%;
+      background: rgba(26, 26, 26, 0.72);
+      color: var(--white);
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: background 0.2s, color 0.2s, opacity 0.2s;
+    }
+
+    .gallery-btn:hover,
+    .gallery-btn:focus-visible {
+      background: var(--warm);
+      color: var(--charcoal);
+      outline: none;
+    }
+
+    .gallery-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .gallery-prev {
+      left: 12px;
+    }
+
+    .gallery-next {
+      right: 12px;
     }
 
     .prop-rate {
@@ -838,6 +897,35 @@
       border-radius: 14px;
       border: 1px solid var(--border);
       background: var(--charcoal);
+    }
+
+    .photo-grid-scroller {
+      position: relative;
+      margin-top: 34px;
+    }
+
+    .photo-grid-scroller .photo-grid {
+      display: flex;
+      gap: 14px;
+      margin-top: 0;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .photo-grid-scroller .photo-grid picture,
+    .photo-grid-scroller .photo-grid picture:first-child {
+      flex: 0 0 min(650px, 78vw);
+      min-width: min(650px, 78vw);
+      grid-column: auto;
+      grid-row: auto;
+      scroll-snap-align: start;
+    }
+
+    .photo-grid-scroller .photo-grid img {
+      height: 420px;
+      min-height: 420px;
     }
 
     .copy-columns {
@@ -1187,13 +1275,29 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .photo-grid-scroller .photo-grid {
+        grid-template-columns: none;
+      }
+
       .photo-grid picture:first-child {
         grid-column: span 2;
         grid-row: span 1;
       }
 
+      .photo-grid-scroller .photo-grid picture,
+      .photo-grid-scroller .photo-grid picture:first-child {
+        flex-basis: min(320px, 84vw);
+        min-width: min(320px, 84vw);
+        grid-column: auto;
+      }
+
       .photo-grid img {
         min-height: 160px;
+      }
+
+      .photo-grid-scroller .photo-grid img {
+        height: 260px;
+        min-height: 260px;
       }
 
       .section {
@@ -1676,5 +1780,6 @@
     </div>
     <p class="footer-copy">CHJB Short Stays Ltd provides direct-book serviced accommodation for Doncaster contractors, NHS staff, families, relocations and longer stays.</p>
   </footer>
+  <script src="gallery.js" defer></script>
 </body>
 </html>

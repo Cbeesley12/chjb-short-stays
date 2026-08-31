@@ -3,7 +3,7 @@ import { extname, join } from "node:path";
 
 const root = process.cwd();
 const dist = join(root, "dist");
-const allowedExtensions = new Set([".html", ".txt", ".xml", ".css", ".jpg", ".jpeg", ".png", ".webp", ".svg", ".ico"]);
+const allowedExtensions = new Set([".html", ".txt", ".xml", ".css", ".js", ".jpg", ".jpeg", ".png", ".webp", ".svg", ".ico"]);
 const ignoredDirectories = new Set([".git", ".agents", ".codex", "dist", "node_modules", "output"]);
 
 await rm(dist, { recursive: true, force: true });
