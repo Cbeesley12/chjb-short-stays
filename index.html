@@ -78,24 +78,24 @@
         "makesOffer": [
           {
             "@type": "Offer",
-            "name": "Near Doncaster city centre serviced accommodation from \u00a382 per night",
-            "price": "82",
+            "name": "Near Doncaster city centre serviced accommodation from \u00a372 per night",
+            "price": "72",
             "priceCurrency": "GBP",
-            "url": "https://chjbshortstays.bookeddirectly.host/"
+            "url": "https://chjbshortstays.bookeddirectly.host/property/b878bc"
           },
           {
             "@type": "Offer",
             "name": "Stainforth Doncaster M18 contractor accommodation from \u00a3100 per night",
             "price": "100",
             "priceCurrency": "GBP",
-            "url": "https://chjbshortstays.bookeddirectly.host/"
+            "url": "https://chjbshortstays.bookeddirectly.host/property/315be9"
           },
           {
             "@type": "Offer",
             "name": "Stainforth Doncaster large group accommodation from \u00a3182 per night",
             "price": "182",
             "priceCurrency": "GBP",
-            "url": "https://chjbshortstays.bookeddirectly.host/"
+            "url": "https://chjbshortstays.bookeddirectly.host/property/027218"
           }
         ]
       },
@@ -108,7 +108,7 @@
             "name": "How much does contractor accommodation in Doncaster cost?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Current direct-book guide prices shown on Uplisting are from \u00a382, \u00a3100 and \u00a3182 per night, depending on the property and dates. Longer weekly or monthly contractor stays may price differently, so check live availability or ask for a team quote."
+              "text": "Current direct-book guide prices shown on Uplisting are from \u00a372, \u00a3100 and \u00a3182 per night, depending on the property and dates. Longer weekly or monthly contractor stays may price differently, so check live availability or ask for a team quote."
             }
           },
           {
@@ -759,6 +759,134 @@
       background: var(--slate);
     }
 
+    .prop-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .prop-actions .prop-book {
+      margin-top: 0;
+    }
+
+    .prop-detail-link {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .prop-detail-link:hover {
+      border-color: var(--warm);
+      color: var(--warm-deep);
+    }
+
+    .property-facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .fact-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+    }
+
+    .fact-card strong {
+      display: block;
+      color: var(--charcoal);
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .fact-card span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .photo-grid picture:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 210px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--charcoal);
+    }
+
+    .copy-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    .copy-panel {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+    }
+
+    .copy-panel h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 11px;
+      padding: 0;
+      margin: 18px 0 0;
+      list-style: none;
+    }
+
+    .detail-list li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .detail-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--warm);
+    }
+
     .audiences-section {
       background: var(--charcoal);
       color: var(--white);
@@ -1035,7 +1163,8 @@
       }
 
       .hero-inner,
-      .audiences-inner {
+      .audiences-inner,
+      .copy-columns {
         grid-template-columns: 1fr;
         gap: 28px;
       }
@@ -1052,6 +1181,19 @@
 
       .hero-images picture:first-child img {
         height: 220px;
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo-grid picture:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .photo-grid img {
+        min-height: 160px;
       }
 
       .section {
@@ -1195,7 +1337,7 @@
       </div>
       <div class="usps-grid">
         <article class="usp-card">
-          <div class="usp-icon">£</div>
+          <div class="usp-icon">&pound;</div>
           <h3>Book direct and avoid platform fees</h3>
           <p>No Airbnb or Booking.com platform fees when you reserve through the CHJB Short Stays direct booking page.</p>
         </article>
@@ -1256,7 +1398,10 @@
                 <li>Pool table</li>
                 <li>Large free parking</li>
               </ul>
-              <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+              <div class="prop-actions">
+                <a class="prop-detail-link" href="stainforth-5-bedroom-sleeps-10/">View full property details</a>
+                <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/property/027218">Check availability for this property</a>
+              </div>
             </div>
           </article>
 
@@ -1266,12 +1411,12 @@
                 <source type="image/webp" srcset="city-bedroom-1-400.webp 400w, city-bedroom-1-800.webp 800w, city-bedroom-1-1200.webp 1200w, city-bedroom-1-2000.webp 2000w" sizes="(min-width: 900px) 33vw, 100vw">
                 <img class="prop-img" src="city-bedroom-1.jpg" alt="Bedroom in serviced accommodation near Doncaster city centre and Doncaster Royal Infirmary" width="1440" height="1908" loading="lazy">
               </picture>
-              <div class="prop-price-tag">From &pound;82/night</div>
+              <div class="prop-price-tag">From &pound;72/night</div>
             </div>
             <div class="prop-body">
               <p class="prop-tagline">Near Doncaster city centre - hospital access</p>
               <h3>Near Doncaster city centre - sleeps 6 with two bedrooms, free parking and easy hospital access</h3>
-              <p class="prop-rate">From &pound;82 per night</p>
+              <p class="prop-rate">From &pound;72 per night</p>
               <p>This two-bedroom serviced accommodation is around five minutes from Doncaster city centre and well placed for Doncaster Royal Infirmary, Doncaster railway station, shopping, restaurants and family visits.</p>
               <ul class="prop-features">
                 <li>2 bedrooms</li>
@@ -1279,7 +1424,10 @@
                 <li>Free parking</li>
                 <li>Near DRI</li>
               </ul>
-              <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+              <div class="prop-actions">
+                <a class="prop-detail-link" href="wheatley-2-bedroom-sleeps-6/">View full property details</a>
+                <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/property/b878bc">Check availability for this property</a>
+              </div>
             </div>
           </article>
 
@@ -1293,16 +1441,20 @@
             </div>
             <div class="prop-body">
               <p class="prop-tagline">Stainforth, Doncaster - close to M18</p>
-              <h3>Stainforth, Doncaster - sleeps 7 with four bedrooms, free parking and quick M18 access</h3>
+              <h3>Stainforth, Doncaster - sleeps 7 with three bedrooms, four beds, free parking and quick M18 access</h3>
               <p class="prop-rate">From &pound;100 per night</p>
-              <p>A four-bedroom Doncaster property set up for contractors and working guests who need straightforward access to the M18, Hatfield, Thorne and nearby industrial routes. The house has a kitchen, living space and free parking for weekly and monthly team stays.</p>
+              <p>A three-bedroom Doncaster property set up for contractors and working guests who need straightforward access to the M18, Hatfield, Thorne and nearby industrial routes. The house has four beds, a kitchen, living space and free parking for weekly and monthly team stays.</p>
               <ul class="prop-features">
-                <li>4 bedrooms</li>
+                <li>3 bedrooms</li>
+                <li>4 beds</li>
                 <li>Sleeps 7</li>
                 <li>Close to M18</li>
                 <li>Free parking</li>
               </ul>
-              <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/">Check availability and book direct</a>
+              <div class="prop-actions">
+                <a class="prop-detail-link" href="stainforth-m18-contractor-house-sleeps-7/">View full property details</a>
+                <a class="prop-book" href="https://chjbshortstays.bookeddirectly.host/property/315be9">Check availability for this property</a>
+              </div>
             </div>
           </article>
         </div>
@@ -1452,7 +1604,7 @@
       <div class="faq-grid">
         <article class="faq-card">
           <h3>How much does contractor accommodation in Doncaster cost?</h3>
-          <p>Current direct-book guide prices shown on Uplisting are from &pound;82, &pound;100 and &pound;182 per night, depending on the property and dates. Longer weekly or monthly contractor stays may price differently, so check live availability or ask for a team quote.</p>
+          <p>Current direct-book guide prices shown on Uplisting are from &pound;72, &pound;100 and &pound;182 per night, depending on the property and dates. Longer weekly or monthly contractor stays may price differently, so check live availability or ask for a team quote.</p>
         </article>
         <article class="faq-card">
           <h3>Is there a minimum stay?</h3>
